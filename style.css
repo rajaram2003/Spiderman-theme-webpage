@@ -1,0 +1,406 @@
+/* Responsive Design */
+body {
+    margin: 0;
+    background-color: #1c1c1e;
+    font-family: 'Roboto', Arial, sans-serif;
+    background-image: url('img/bg2.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: #ffffff;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#main {
+    width: 80%;
+    max-width: 1200px;
+    height: auto;
+    position: relative;
+    padding: 20px;
+    border-radius: 10px;
+    overflow-x: auto; /* Allow horizontal scrolling if needed */  
+}
+
+#menu ul {
+    display: flex;
+    gap: 15px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    white-space: nowrap; /* Prevent items from wrapping to the next line */
+}
+
+#top_box {
+    margin-bottom: 150px;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#logo {
+    font-family: 'Bangers', 'Comic Sans MS', sans-serif;
+    font-size: 2.5rem;
+    color: #e62429; /* Spider-Man red */
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    white-space: nowrap; /* Prevents text wrapping */
+    justify-content: flex-start; /* Align to left */
+    animation: pulseLogo 3s infinite; /* Apply the animation */
+}
+
+#logo-image {
+    margin-left: 10px;
+    height: 50px; /* Default size */
+    width: auto;
+    max-height: 100%;
+    transition: height 0.3s ease, margin-left 0.3s ease;
+}
+
+/* Keyframes for logo animation */
+@keyframes pulseLogo {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+#menu ul {
+    display: flex;
+    gap: 15px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#menu ul li {
+    font-family: 'Montserrat', sans-serif;
+    color: #ffffff;
+    font-size: 1rem;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#menu ul li:hover {
+    background-color: #e62429;
+    border-radius: 5px;
+}
+
+#content {
+    position: relative;
+    text-align: left;
+    max-width: 600px;
+    animation: contentFadeIn 1.5s ease-in-out, contentSlideIn 1.5s ease-out;
+}
+
+#msg1 {
+    font-size: 4rem;
+    color: #e62429;
+    margin-bottom: 20px;
+    font-family: 'Bangers', sans-serif;
+    animation: bounceIn 2s ease-out 0.5s; /* Bounce in with delay */
+    animation-fill-mode: both;
+}
+
+#msg2 {
+    font-size: 3.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
+    animation: fadeInUp 1.5s ease-out 1s; /* Fade in with delay */
+    animation-fill-mode: both;
+}
+
+#msg3 {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    font-family: 'Roboto', sans-serif;
+    animation: fadeInUp 1.5s ease-out 1.5s; /* Fade in with delay */
+    animation-fill-mode: both;
+}
+
+#btn {
+    padding: 15px 30px;
+    background-color: #e62429;
+    color: #ffffff;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    animation: pulseBtn 2s infinite;
+}
+
+#btn:hover {
+    background-color: #c8102e;
+}
+
+/* Keyframes for animations */
+
+@keyframes contentFadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes contentSlideIn {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes bounceIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.3) translateY(-200%);
+    }
+    50% {
+        transform: scale(1.05) translateY(0);
+    }
+    70% {
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulseBtn {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+#character {
+    width: 35%;
+    max-width: 350px;
+    position: absolute;
+    bottom: 0;
+    right: 10%;
+    animation: float 6s ease-in-out infinite;
+}
+
+
+/* Object Animations */
+#object1 {
+    width: 15%;
+    max-width: 150px;
+    position: absolute;
+    top: 40%;
+    right: 45%;
+    animation: rotate 10s linear infinite, scaleUp 8s ease-in-out infinite;
+}
+
+#object2 {
+    width: 10%;
+    max-width: 100px;
+    position: absolute;
+    top: 10%;
+    right: 10%;
+    z-index: -1;
+    animation: rotateReverse 15s linear infinite, pulse 4s ease-in-out infinite;
+}
+
+#object3 {
+    width: 5%;
+    max-width: 50px;
+    position: absolute;
+    bottom: 10%;
+    right: 10%;
+    animation: float 8s ease-in-out infinite, fadeInOut 6s ease-in-out infinite;
+}
+
+/* Keyframes for animations */
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes rotateReverse {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(-360deg);
+    }
+}
+
+@keyframes scaleUp {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInOut {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #main {
+        width: 90%;
+        padding: 15px;
+    }
+
+    #menu ul {
+        gap: 10px; /* Smaller gap between items */
+    }
+
+    #menu ul li {
+        font-size: 0.9rem; /* Smaller font size */
+        padding: 8px 10px; /* Adjust padding */
+    }
+
+    #content {
+        max-width: 100%;
+    }
+
+    #logo {
+        font-size: 2rem;
+    }
+
+    #logo-image {
+        height: 40px; /* Smaller size for tablets */
+    }
+}
+
+    #msg1 {
+        font-size: 3rem;
+    }
+
+    #msg2 {
+        font-size: 2.5rem;
+    }
+
+    #msg3 {
+        font-size: 1.2rem;
+    }
+
+    #btn {
+        padding: 12px 25px;
+        font-size: 1rem;
+    }
+
+
+@media (max-width: 480px) {
+    #main {
+        width: 95%;
+    }
+
+    #logo {
+        font-size: 1.5rem;
+    }
+
+    #logo-image {
+        height: 30px; /* Smaller size for mobile devices */
+        margin-left: 5px; /* Adjust spacing */
+    }
+
+    #menu ul {
+        gap: 8px; /* Even smaller gap */
+    }
+
+    #menu ul li {
+        font-size: 0.8rem; /* Even smaller font size */
+        padding: 6px 8px; /* Adjust padding */
+    }
+
+    #msg1 {
+        font-size: 2.5rem;
+    }
+
+    #msg2 {
+        font-size: 2rem;
+    }
+
+    #msg3 {
+        font-size: 1rem;
+    }
+
+    #btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+}
